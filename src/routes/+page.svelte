@@ -60,11 +60,12 @@
     Our Smartphones
     </h2>
     
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="grslug grslug-cols-1 md:grslug-cols-3 gap-8">
     
         {#each data.products as product}
 
         <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition">
+            <a href={`product/${product.slug}`} class="flex items-center gap-4">
         
         <img 
         src={product.image_url} 
@@ -91,9 +92,9 @@
         </button>
         
         </div>
-        
+          </a>
         </div>
-        
+  
         {/each}
     
     </div>
