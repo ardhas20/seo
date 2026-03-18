@@ -4,13 +4,11 @@ import { error } from '@sveltejs/kit';
 export async function load({ params }) {
     const { slug } = params;
 
-    console.log("slug:", slug); // DEBUG
+    console.log("slug:", slug);
 
-    // Krijo lidhjen me DB
-    const connection = await createConnection();
+    const db = await createConnection();
 
-    // Merr produktin nga DB
-    const [rows] = await connection.query(
+    const [rows] = await db.query(
         "SELECT * FROM products WHERE slug = ?",
         [slug]
     );
